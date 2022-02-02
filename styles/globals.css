@@ -6,4 +6,10 @@
   .h1-blue{
     @apply text-2xl font-bold underline-offset-1 text-sky-500 text-center
   }
+
+  .underline-nav{
+    @apply font-bold before:absolute before:w-full before:h-0.7 
+    before:left-0 before:bottom-0 before:bg-black before:scale-x-0 before:block hover:before:scale-x-100 
+    before:origin-top-right hover:before:origin-top-left before:transition-transform before:duration-300 
+  }
 }
