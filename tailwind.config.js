@@ -5,7 +5,7 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",],
   theme: {
     fontFamily: {
-      'sans': ['ui-sans-serif','system-ui','Monsterrat','sans-serif'],
+      'sans': ['Montserrat','sans-serif'],
     },
     extend: {
       spacing:{
