@@ -1,22 +1,23 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-
+import Header from '../components/header'
+import Marquee from "react-fast-marquee"
+import SlidingLeft from '../components/marqueeLeft'
+import SlidingRight from '../components/marqueeRight'
 
 export default function Home() {
   return (
-    <body > 
-      <div className='flex mt-8 ml-4'>
-        <div >
-          <Image src="/images/SB.jpg" alt="Logo" width={150} height={150} priority></Image>
-        </div>
-        <div className='grid grid-cols-2 grid-rows-2 h-fit gap-2 mt-10 '>
-          <Link href={'/'}><a className='underline-nav relative text-left mx-3 px-0 py-1 tracking-wide w-fit ' >HOME</a></Link>
-          <Link href={'/'}><a className='underline-nav relative text-left mx-3 px-0 py-1 tracking-wide w-fit' >YOUTUBE</a></Link>
-          <Link href={'/'}><a className='underline-nav relative text-left mx-3 px-0 py-1 tracking-wide w-fit' >PROFILE</a></Link>
-          <Link href={'/'}><a className='underline-nav relative text-left mx-3 px-0 py-1 tracking-wide w-fit' >ABOUT</a></Link>
-        </div>
+    <>
+      <Header />
+      <div>
+        <Marquee speed={200} direction='left' gradient={false} className='mb-3'>
+          <SlidingLeft />
+        </Marquee>
+        <Marquee speed={200} direction='right' gradient={false}>
+          <SlidingRight />
+        </Marquee>
       </div>
-    </body>
+    </>
   )
 }

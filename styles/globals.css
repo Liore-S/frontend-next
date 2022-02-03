@@ -12,4 +12,12 @@
     before:bg-black before:scale-x-0 before:block hover:before:scale-x-100 before:origin-top-right 
     hover:before:origin-top-left before:transition-transform before:duration-300 
   }
+
+  .marquee-li{
+    @apply flex w-32 shrink-0 whitespace-nowrap text-3xl justify-center items-center animate-scrol
+  }
+
+  .marquee-item{
+    @apply mx-8 border-4 border-black
+  }
 }
