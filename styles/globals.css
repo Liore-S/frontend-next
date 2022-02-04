@@ -4,7 +4,7 @@
 
 @layer components{
   .h1-blue{
-    @apply text-2xl font-bold underline-offset-1 text-sky-500 text-center
+    @apply text-2xl font-bold text-sky-500
   }
 
   .underline-nav{
