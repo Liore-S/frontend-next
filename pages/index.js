@@ -11,10 +11,10 @@ export default function Home() {
     <>
       <Header />
       <div>
-        <Marquee speed={200} direction='left' gradient={false} className='mb-3'>
+        <Marquee speed={50} direction='left' gradient={false} className='mb-5'>
           <SlidingLeft />
         </Marquee>
-        <Marquee speed={200} direction='right' gradient={false}>
+        <Marquee speed={50} direction='right' gradient={false} className='mb-6'>
           <SlidingRight />
         </Marquee>
       </div>

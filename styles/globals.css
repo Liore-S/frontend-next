@@ -18,6 +18,6 @@
   }
 
   .marquee-item{
-    @apply mx-8 border-4 border-black
+    @apply mx-2 border-4 border-black
   }
 }
