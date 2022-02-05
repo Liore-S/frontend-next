@@ -4,7 +4,7 @@ import Link from "next/link"
 export default function Header() {
     return (
         <>
-            <div className='flex mt-8 ml-4 -mb-4'>
+            <div className='flex mt-4 -ml-4 -mb-10 md:mt-8 md:ml-4 md:-mb-4'>
                 <div >
                     <Image src="/images/SB.jpg" alt="Logo" width={150} height={150} priority></Image>
                 </div>
