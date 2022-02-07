@@ -9,19 +9,21 @@ import Title from '../components/title'
 
 export default function Home() {
   return (
-    <div className='antialiased border-8 border-black overflow-hidden'>
-      <Header />
-      <div>
-        <Title />
+    <>
+      <div className='antialiased border-8 border-black h-screen overflow-x-hidden overflow-y-scroll'>
+        <Header />
         <div>
-          <Marquee speed={50} direction='left' gradient={false} pauseOnClick={true} pauseOnHover={true} className='mb-5'>
-            <SlidingLeft />
-          </Marquee>
-          <Marquee speed={50} direction='right' gradient={false} pauseOnClick={true} pauseOnHover={true} className='mb-6'>
-            <SlidingRight />
-          </Marquee>
+          <Title />
+          <div>
+            <Marquee speed={50} direction='left' gradient={false} className='mb-5'>
+              <SlidingLeft />
+            </Marquee>
+            <Marquee speed={50} direction='right' gradient={false} className='mb-6'>
+              <SlidingRight />
+            </Marquee>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }

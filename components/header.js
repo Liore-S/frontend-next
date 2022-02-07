@@ -8,12 +8,13 @@ export default function Header() {
                 <div >
                     <Image src="/images/SB.jpg" alt="Logo" width={150} height={150} priority></Image>
                 </div>
-                <div className='grid grid-cols-3 grid-rows-2 h-fit gap-2 mt-10 '>
-                    <Link href={'/'}><a className='underline-nav relative text-left mx-3 px-0 py-1 tracking-wide w-fit ' >HOME</a></Link>
-                    <Link href={'/'}><a className='underline-nav relative text-left mx-3 px-0 py-1 tracking-wide w-fit' >YOUTUBE</a></Link>
-                    <Link href={'/'}><a className='underline-nav relative text-left mx-3 px-0 py-1 tracking-wide w-fit' >PROFILE</a></Link>
-                    <Link href={'/'}><a className='underline-nav relative text-left mx-3 px-0 py-1 tracking-wide w-fit' >ABOUT</a></Link>
-                    <Link href={'/todo'}><a className='underline-nav relative text-left mx-3 px-0 py-1 tracking-wide w-fit text-purple-500' >TODO</a></Link>
+                <div className='grid grid-cols-3 grid-rows-2 h-fit gap-0 mt-10 -mx-4'>
+                    <Link href={'/'}><a className='underline-nav relative text-left mx-1 md:mx-3 px-0 py-1 tracking-wide w-fit' >HOME</a></Link>
+                    <Link href={'/'}><a className='underline-nav relative text-left mx-1 md:mx-3 px-0 py-1 tracking-wide w-fit' >PROFILE</a></Link>
+                    <Link href={'/'}><a className='underline-nav relative text-left mx-1 md:mx-3 px-0 py-1 tracking-wide w-fit' >YOUTUBE</a></Link>
+                    <Link href={'/'}><a className='underline-nav relative text-left mx-1 md:mx-3 px-0 py-1 tracking-wide w-fit' >ABOUT</a></Link>
+                    <Link href={'/navbar'}><a className='underline-nav relative text-left mx-1 md:mx-3 px-0 py-1 tracking-wide w-fit' >NAVBAR</a></Link>
+                    <Link href={'/todo'}><a className='underline-nav relative text-left mx-1 md:mx-3 px-0 py-1 tracking-wide w-fit' >TODO</a></Link>
                 </div>
             </div>
         </>
