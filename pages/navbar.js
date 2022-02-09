@@ -4,10 +4,10 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 
 const navigation = [
-  { name: 'Dashboard', href: '#', current: true },
-  { name: 'Team', href: '#', current: false },
-  { name: 'Projects', href: '#', current: false },
-  { name: 'Calendar', href: '#', current: false },
+  { name: 'Navbar', href: '/navbar', current: true },
+  { name: 'Self-navbar', href: '/self-navbar', current: false },
+  { name: 'Navbar-tes', href: 'navbar-tes', current: false },
+  { name: 'Button', href: 'button', current: false },
 ]
 
 function classNames(...classes) {
@@ -21,9 +21,10 @@ export default function Example() {
         <>
           <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
             <div className="relative flex items-center justify-between h-16">
+              {/* Disclosure Button (Mobile)*/}
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
-                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-sky-300">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
                     <XIcon className="block h-6 w-6" aria-hidden="true" />
@@ -45,6 +46,7 @@ export default function Example() {
                     alt="Workflow"
                   />
                 </div>
+                {/* Desktop Menu (Horizontal) */}
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">
                     {navigation.map((item) => (
@@ -63,6 +65,7 @@ export default function Example() {
                   </div>
                 </div>
               </div>
+              {/* Items in the right */}
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 <button
                   type="button"
@@ -130,7 +133,7 @@ export default function Example() {
               </div>
             </div>
           </div>
-
+          {/* Mobile Menu (Vertical) */}
           <Disclosure.Panel className="sm:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navigation.map((item) => (
