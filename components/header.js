@@ -51,7 +51,7 @@ export default function Header() {
             >
               <Menu.Items className="absolute top-14 right-2 ml-7 mt-1 w-48 rounded-md shadow-lg py-1 bg-white z-20">
                 {navigation.map((item)=>(
-                  <Menu.Item >
+                  <Menu.Item key={item.name}>
                     {({ active }) => (
                       <a
                         key={item.name}
