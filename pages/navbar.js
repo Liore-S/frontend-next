@@ -3,7 +3,7 @@ import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 
-const navigation = [
+const navigation1 = [
   { name: 'Navbar', href: '/navbar', current: true },
   { name: 'Self-navbar', href: '/self-navbar', current: false },
   { name: 'Navbar-tes', href: 'navbar-tes', current: false },
@@ -49,7 +49,7 @@ export default function Example() {
                 {/* Desktop Menu (Horizontal) */}
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">
-                    {navigation.map((item) => (
+                    {navigation1.map((item) => (
                       <a
                         key={item.name}
                         href={item.href}
@@ -136,7 +136,7 @@ export default function Example() {
           {/* Mobile Menu (Vertical) */}
           <Disclosure.Panel className="sm:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              {navigation.map((item) => (
+              {navigation1.map((item) => (
                 <Disclosure.Button
                   key={item.name}
                   as="a"
