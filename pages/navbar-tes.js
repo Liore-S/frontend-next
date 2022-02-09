@@ -55,7 +55,7 @@ export default function Navbar() {
             </div>
             {/* <!-- Mobile menu button --> */}
             <div className="md:hidden flex items-center">
-              <button id="mobile-menu-button" className="outline-none" >
+              {/* <button id="mobile-menu-button" className="outline-none" >
                 <svg className=" w-6 h-6 text-gray-500 hover:text-green-500 "
                   x-show="!showMenu"
                   fill="none"
@@ -67,7 +67,7 @@ export default function Navbar() {
                 >
                   <path d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
-              </button>
+              </button> */}
             </div>
             {/* <!-- Mobile menu --> */}
             <div id="mobile-menu" className="hidden ">
