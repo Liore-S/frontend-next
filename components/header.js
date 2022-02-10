@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
-import { Transition, Menu } from "@headlessui/react"
-import { Fragment } from "react"
+import { Transition, Menu, Switch } from "@headlessui/react"
+import { Fragment, useState } from "react"
 import { MenuIcon } from "@heroicons/react/solid"
 
 const navigation = [
@@ -12,6 +12,7 @@ const navigation = [
 ]
 
 export default function Header() {
+  const [enabled, setEnabled] = useState(false)
   return (
     <>
       <div className='flex relative mt-4 -ml-4 -mb-10 md:mt-8 md:ml-4 md:-mb-4'>
@@ -32,6 +33,7 @@ export default function Header() {
               </a></Link>
           ))}
         </div>
+        {/* Mobile Menu */}
         <div className="relative md:hidden w-full">
           <Menu as="div" className=" md:hidden w-full">
             <div className="ml-7 pt-5">
@@ -50,7 +52,7 @@ export default function Header() {
               leaveTo="transform opacity-0 scale-95"
             >
               <Menu.Items className="absolute top-14 right-2 ml-7 mt-1 w-48 rounded-md shadow-lg py-1 bg-white z-20">
-                {navigation.map((item)=>(
+                {navigation.map((item) => (
                   <Menu.Item key={item.name}>
                     {({ active }) => (
                       <a
@@ -60,12 +62,30 @@ export default function Header() {
                           `${active && 'bg-blue-500 text-white'} block mx-2 rounded-lg py-1 pl-2 text-sm my-1`}
                       >
                         {item.name}</a>
-                  )}
+                    )}
                   </Menu.Item>
                 ))}
               </Menu.Items>
             </Transition>
           </Menu>
+        </div>
+        {/* Theme Switch */}
+        <div className="absolute right-24 top-0">
+          <div className="absolute w-fit h-fit top-12">
+            <Switch
+              checked={enabled}
+              onChange={setEnabled}
+              className={`${enabled ? 'bg-slate-700' : 'bg-slate-300'}
+          relative inline-flex flex-shrink-0 h-[38px] w-[74px] border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
+            >
+              <span className="sr-only">Use setting</span>
+              <span
+                aria-hidden="true"
+                className={`${enabled ? 'translate-x-9' : 'translate-x-0'}
+            pointer-events-none inline-block h-[34px] w-[34px] rounded-full bg-white shadow-lg transform ring-0 transition ease-in-out duration-200`}
+              />
+            </Switch>
+          </div>
         </div>
       </div>
     </>
