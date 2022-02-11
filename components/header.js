@@ -5,9 +5,9 @@ import { Fragment, useState } from "react"
 import { MenuIcon } from "@heroicons/react/solid"
 
 const navigation = [
-  { name: 'PROFILE', href: '/pf' },
-  { name: 'YOUTUBE', href: '/yt' },
-  { name: 'ABOUT', href: '/' },
+  { name: 'PROFILE', href: 'https://liore.vercel.app/post/Profile' },
+  { name: 'YOUTUBE', href: 'https://liore.vercel.app/post/Video' },
+  { name: 'ABOUT', href: 'https://liore.vercel.app/' },
   { name: 'TODO', href: '/todo' }
 ]
 
@@ -28,7 +28,8 @@ export default function Header() {
             <Link
               key={item.name}
               href={item.href}>
-              <a className='underline-nav relative text-left mx-1 md:mx-3 px-0 py-1 tracking-wide w-fit'>
+              <a className='underline-nav relative text-left mx-1 md:mx-3 px-0 py-1 tracking-wide w-fit'
+              target="_blank">
                 {item.name}
               </a></Link>
           ))}
@@ -58,6 +59,7 @@ export default function Header() {
                       <a
                         key={item.name}
                         href={item.href}
+                        target="_blank"
                         className={
                           `${active && 'bg-blue-500 text-white'} block mx-2 rounded-lg py-1 pl-2 text-sm my-1`}
                       >
@@ -70,19 +72,19 @@ export default function Header() {
           </Menu>
         </div>
         {/* Theme Switch */}
-        <div className="absolute right-24 top-0">
-          <div className="absolute w-fit h-fit top-12">
+        <div className="absolute right-24">
+          <div className="absolute w-fit h-fit top-12 top-7 ">
             <Switch
               checked={enabled}
               onChange={setEnabled}
               className={`${enabled ? 'bg-slate-700' : 'bg-slate-300'}
-          relative inline-flex flex-shrink-0 h-[38px] w-[74px] border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
+          relative inline-flex flex-shrink-0 h-5 w-10 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
             >
               <span className="sr-only">Use setting</span>
               <span
                 aria-hidden="true"
-                className={`${enabled ? 'translate-x-9' : 'translate-x-0'}
-            pointer-events-none inline-block h-[34px] w-[34px] rounded-full bg-white shadow-lg transform ring-0 transition ease-in-out duration-200`}
+                className={`${enabled ? 'translate-x-5' : 'translate-x-0'}
+            pointer-events-none inline-block h-4 w-4 rounded-full bg-white shadow-lg transform ring-0 transition ease-in-out duration-200`}
               />
             </Switch>
           </div>
