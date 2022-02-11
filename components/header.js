@@ -29,7 +29,9 @@ export default function Header() {
               key={item.name}
               href={item.href}>
               <a className='underline-nav relative text-left mx-1 md:mx-3 px-0 py-1 tracking-wide w-fit'
-              target="_blank">
+                target="_blank"
+                rel="noreferrer noopenner"
+              >
                 {item.name}
               </a></Link>
           ))}
@@ -60,6 +62,7 @@ export default function Header() {
                         key={item.name}
                         href={item.href}
                         target="_blank"
+                        rel="noreferrer noopenner"
                         className={
                           `${active && 'bg-blue-500 text-white'} block mx-2 rounded-lg py-1 pl-2 text-sm my-1`}
                       >
