@@ -14,13 +14,13 @@ const navigation = [
 
 export default function Header() {
   const [enabled, setEnabled] = useState(false)
-  const {setTheme}  = useTheme()
+  const { setTheme } = useTheme()
   return (
     <>
       <div className='flex relative mt-4 -ml-4 -mb-10 md:mt-8 md:ml-4 md:-mb-4'>
-        
+        {setTheme(enabled ? 'dark' : 'light')}
         {/* Image */}
-        <div>
+        <div className="dark:hidden">
           <Link href={"/"}>
             <Image src="/images/SB.jpg" alt="Logo" width={150} height={150} priority className="cursor-pointer"></Image>
           </Link>
@@ -92,7 +92,7 @@ export default function Header() {
                 className={`${enabled ? 'translate-x-5' : 'translate-x-0'}
                   pointer-events-none inline-block h-4 w-4 rounded-full bg-white shadow-lg transform ring-0 transition ease-in-out duration-200`}
               />
-              {setTheme(enabled ? 'dark' : 'light')}
+
             </Switch>
           </div>
         </div>
