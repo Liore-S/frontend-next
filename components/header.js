@@ -14,13 +14,13 @@ const navigation = [
 
 export default function Header() {
   const [enabled, setEnabled] = useState(false)
-  const { setTheme } = useTheme()
+  const {theme, setTheme } = useTheme()
   return (
     <>
       <div className='flex relative mt-4 -ml-4 -mb-10 md:mt-8 md:ml-4 md:-mb-4'>
-        {setTheme(enabled ? 'dark' : 'light')}
+        
         {/* Image */}
-        <div className="dark:hidden">
+        <div className="dark:opacity-0">
           <Link href={"/"}>
             <Image src="/images/SB.jpg" alt="Logo" width={150} height={150} priority className="cursor-pointer"></Image>
           </Link>
@@ -43,9 +43,9 @@ export default function Header() {
         <div className="relative md:hidden w-full">
           <Menu as="div" className=" md:hidden w-full">
             <div className="ml-7 pt-5">
-              <Menu.Button className="absolute right-2 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-offset-2 text-sm focus:ring-offset-gray-800 focus:ring-white">
+              <Menu.Button className="absolute right-2 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-offset-2 text-sm focus:ring-offset-gray-800 focus:ring-white ">
                 <span className="sr-only">Open user menu</span>
-                <MenuIcon className="w-5 h-5 text-slate-800" />
+                <MenuIcon className="w-5 h-5 text-slate-800 dark:text-white" />
               </Menu.Button>
             </div>
             <Transition
@@ -57,9 +57,9 @@ export default function Header() {
               leaveFrom="transform opacity-100 scale-100"
               leaveTo="transform opacity-0 scale-95"
             >
-              <Menu.Items className="absolute top-14 right-2 ml-7 mt-1 w-48 rounded-md shadow-lg py-1 bg-white z-20">
+              <Menu.Items className="absolute top-14 right-2 ml-7 mt-1 w-48 rounded-md shadow-lg py-1 bg-white z-20 ">
                 {navigation.map((item) => (
-                  <Menu.Item key={item.name}>
+                  <Menu.Item key={item.name} >
                     {({ active }) => (
                       <a
                         key={item.name}
@@ -67,7 +67,7 @@ export default function Header() {
                         target="_blank"
                         rel="noreferrer noopenner"
                         className={
-                          `${active && 'bg-blue-500 text-white'} block mx-2 rounded-lg py-1 pl-2 text-sm my-1`}
+                          `${active && 'bg-blue-500 text-white '} block mx-2 rounded-lg py-1 pl-2 text-sm my-1 dark:text-black`}
                       >
                         {item.name}</a>
                     )}
@@ -80,20 +80,21 @@ export default function Header() {
         {/* Theme Switch */}
         <div className="absolute right-24">
           <div className="absolute w-fit h-fit top-12 top-7 ">
-            <Switch
-              checked={enabled}
-              onChange={setEnabled}
-              className={`${enabled ? 'bg-slate-700' : 'bg-slate-300'}
+            <button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
+              <Switch
+                checked={enabled}
+                onChange={setEnabled}
+                className={`${enabled ? 'bg-slate-700' : 'bg-slate-300'}
                 relative inline-flex flex-shrink-0 h-5 w-10 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
-            >
-              <span className="sr-only">Use setting</span>
-              <span
-                aria-hidden="true"
-                className={`${enabled ? 'translate-x-5' : 'translate-x-0'}
+              >
+                <span className="sr-only">Use setting</span>
+                <span
+                  aria-hidden="true"
+                  className={`${enabled ? 'translate-x-5' : 'translate-x-0'}
                   pointer-events-none inline-block h-4 w-4 rounded-full bg-white shadow-lg transform ring-0 transition ease-in-out duration-200`}
-              />
-
-            </Switch>
+                />
+              </Switch>
+            </button>
           </div>
         </div>
       </div>
