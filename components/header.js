@@ -3,6 +3,7 @@ import Link from "next/link"
 import { Transition, Menu, Switch } from "@headlessui/react"
 import { Fragment, useState } from "react"
 import { MenuIcon } from "@heroicons/react/solid"
+import { useTheme } from "next-themes"
 
 const navigation = [
   { name: 'PROFILE', href: 'https://liore.vercel.app/post/Profile' },
@@ -13,9 +14,11 @@ const navigation = [
 
 export default function Header() {
   const [enabled, setEnabled] = useState(false)
+  const {setTheme}  = useTheme()
   return (
     <>
       <div className='flex relative mt-4 -ml-4 -mb-10 md:mt-8 md:ml-4 md:-mb-4'>
+        
         {/* Image */}
         <div>
           <Link href={"/"}>
@@ -81,14 +84,15 @@ export default function Header() {
               checked={enabled}
               onChange={setEnabled}
               className={`${enabled ? 'bg-slate-700' : 'bg-slate-300'}
-          relative inline-flex flex-shrink-0 h-5 w-10 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
+                relative inline-flex flex-shrink-0 h-5 w-10 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
             >
               <span className="sr-only">Use setting</span>
               <span
                 aria-hidden="true"
                 className={`${enabled ? 'translate-x-5' : 'translate-x-0'}
-            pointer-events-none inline-block h-4 w-4 rounded-full bg-white shadow-lg transform ring-0 transition ease-in-out duration-200`}
+                  pointer-events-none inline-block h-4 w-4 rounded-full bg-white shadow-lg transform ring-0 transition ease-in-out duration-200`}
               />
+              {setTheme(enabled ? 'dark' : 'light')}
             </Switch>
           </div>
         </div>

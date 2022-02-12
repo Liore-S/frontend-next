@@ -8,6 +8,7 @@ import SlidingRight from '../components/marqueeRight'
 import Title from '../components/title'
 
 export default function Home() {
+
   return (
     <>
       <div className='antialiased border-8 border-black h-screen overflow-x-hidden overflow-y-scroll'>
