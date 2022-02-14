@@ -14,11 +14,11 @@ const navigation = [
 
 export default function Header() {
   const [enabled, setEnabled] = useState(false)
-  const {theme, setTheme } = useTheme()
+  const { theme, setTheme } = useTheme()
   return (
     <>
       <div className='flex relative mt-4 -ml-4 -mb-10 md:mt-8 md:ml-4 md:-mb-4'>
-        
+
         {/* Image */}
         <div className="dark:opacity-0">
           <Link href={"/"}>
@@ -36,7 +36,8 @@ export default function Header() {
                 rel="noreferrer noopenner"
               >
                 {item.name}
-              </a></Link>
+              </a>
+            </Link>
           ))}
         </div>
         {/* Mobile Menu */}
